@@ -19,10 +19,13 @@ class Video extends CI_Controller
 	public function feed($id_pelajaran)
 	{
 		$data["title"] = "Onsty";
-		$data["videos"] = $this->Main_model->get_data('tbl_video', ['id_pelajaran' => $id_pelajaran]);
-		
-		// var_dump($data["videos"]);
-		// die;
+
+		$where = [
+			'id_pelajaran' => $id_pelajaran,
+			'id_kelas' => $this->session->kelas
+		];
+
+		$data["videos"] = $this->Main_model->get_data('tbl_video', $where);
 		
 		$this->load->view('siswa/template_header', $data);
 		$this->load->view('siswa/view_feed');
