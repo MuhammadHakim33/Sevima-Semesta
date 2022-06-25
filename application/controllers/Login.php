@@ -55,6 +55,7 @@ class Login extends CI_Controller
 					'status' => "logged_in",
 					'id' => $data_login["id_siswa"],
 					'nama' => $data_login["nama_siswa"],
+					'kelas' => $data_login["id_kelas"],
 				];
 
                 $this->session->set_userdata($data_session);
