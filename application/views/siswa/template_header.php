@@ -11,7 +11,7 @@
 <body>
 
     <?php if($title !== 'Login' && $title !== 'Video'): ?>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="<?= base_url('assets/img/logo.png') ?>" width="100">

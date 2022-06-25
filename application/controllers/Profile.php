@@ -19,7 +19,13 @@ class Profile extends CI_Controller
 	public function index()
 	{
 		$data["title"] = "Beranda";
-		$data["siswa"] = $this->Main_model->get_data('tbl_siswa', ['id_siswa', $this->session->id])[0];
+		$data["kelas"] = $this->Main_model->get_data('tbl_kelas');
+		$data["siswa"] = $this->Main_model->get_data_join(
+			'tbl_siswa', 
+			'tbl_kelas' , 
+			'tbl_siswa.id_kelas = tbl_kelas.id_kelas',
+			['tbl_siswa.id_siswa' => $this->session->id]
+		)[0];
 
 		$this->load->view('siswa/template_header', $data);
 		$this->load->view('siswa/view_profile');
@@ -29,15 +35,15 @@ class Profile extends CI_Controller
     public function ubah()
     {
         $id = $this->input->post('id');
-        $nisn_siswa = $this->input->post('nisn_siswa');
+        $kelas = $this->input->post('kelas');
         $nama_siswa = $this->input->post('nama_siswa');
         $email_siswa = $this->input->post('email_siswa');
 
         $input = [
-            'nisn_siswa' => $nisn_siswa,
-            'nama_siswa' => $nama_siswa,
-            'email_siswa' => $email_siswa
-        ];
+			'nama_siswa' => $nama_siswa,
+            'email_siswa' => $email_siswa,
+            'id_kelas' => $kelas
+		];
 
         $this->Main_model->update_data('tbl_siswa', $input, ['id_siswa' => $id]);
 
