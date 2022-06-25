@@ -7,6 +7,13 @@ class Video extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Main_model');
+		$this->load->library('session');
+
+		if(empty($this->session->userdata('status')))
+		{
+			redirect(base_url("login"));
+			die;
+		}
 	}
 
 	public function player($yt_id_video)
