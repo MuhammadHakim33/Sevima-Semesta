@@ -16,20 +16,15 @@
                 <a class="navbar-brand" href="#">
                     <img src="<?= base_url('assets/img/logo.png') ?>" width="100">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="navbar-nav-akun dropdown ms-auto">
-                        <button class="btn btn-sm btn-outline-primary dropdown-toggle rounded-0" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                            <?= $this->session->nama ?>
-                        </button>
-                        <div class="dropdown-menu rounded-0 mt-4" aria-labelledby="dropdownMenuButton1">
-                            <a class="dropdown-item" href="<?= base_url('profile')?>">Profile</a>
-                            <hr class="dropdown-divider">
-                            <a class="dropdown-item" href="<?= base_url('login/logout')?>">Keluar</a>
-                        </div>   
-                    </div>
+                <div class="navbar-nav-akun dropdown ms-auto">
+                    <button class="btn btn-sm btn-outline-primary dropdown-toggle rounded-0" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                        <?= $this->session->nama ?>
+                    </button>
+                    <div class="dropdown-menu rounded-0 mt-4" aria-labelledby="dropdownMenuButton1">
+                        <a class="dropdown-item" href="<?= base_url('profile')?>">Profile</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item" href="<?= base_url('login/logout')?>">Keluar</a>
+                    </div>   
                 </div>
             </div>
         </nav>
