@@ -19,10 +19,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="navbar-nav-akun dropdown ms-auto">
                         <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            Mamat
+                            <?= $this->session->nama ?>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="<?= base_url('profile')?>">Profile</a>
                             <hr class="dropdown-divider">
                             <a class="dropdown-item" href="<?= base_url('login/logout')?>">Keluar</a>
                         </div>   

@@ -47,12 +47,14 @@ class Login extends CI_Controller
 				'password_siswa' => $password
 			];
 
-			$data_login = $this->Main_model->get_data("tbl_siswa", $where);
+			$data_login = $this->Main_model->get_data("tbl_siswa", $where)[0];
 
 			if(count($data_login) > 0)
 			{
                 $data_session = [
 					'status' => "logged_in",
+					'id' => $data_login["id_siswa"],
+					'nama' => $data_login["nama_siswa"],
 				];
 
                 $this->session->set_userdata($data_session);
